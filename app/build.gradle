@@ -1,0 +1,73 @@
+plugins {
+    id 'com.android.application'
+
+}
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.example.teamsclone2"
+        minSdkVersion 25
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    //country code dependency
+    implementation 'com.hbb20:ccp:2.4.7'
+
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'com.google.firebase:firebase-firestore:23.0.1'
+    implementation 'com.google.android.material:material:1.0.0'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'com.google.firebase:firebase-analytics'
+
+    // Import the BoM for the Firebase platform
+    implementation platform('com.google.firebase:firebase-bom:28.1.0')
+
+    // Declare the dependency for the Firebase Authentication library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-auth:20.0.1'
+    //implementation 'android.browser:browser:1.2.0 '
+
+    implementation ('org.jitsi.react:jitsi-meet-sdk:2.+') { transitive = true }
+
+    //OTP pin view design
+    implementation 'com.chaos.view:pinview:1.4.3'
+
+    //Day and night theme transition
+    implementation 'com.github.Mahfa:DayNightSwitch:1.4'
+
+    //Lottie dependency
+    implementation 'com.airbnb.android:lottie:3.7.0'
+
+    //schedule and notify meeting
+    implementation 'com.github.jakebonk:NotifyMe:1.0.0'
+    implementation 'com.wdullaer:materialdatetimepicker:3.6.0'
+
+
+
+}
